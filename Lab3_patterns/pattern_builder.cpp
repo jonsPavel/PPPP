@@ -208,57 +208,6 @@ int main(){
 	return EXIT_SUCCESS;
 }
 
-//###############################################################################
-//################################Pattern Composite##############################
-//###############################################################################
-class Train : public Transport {
-public:
-	Train() {
-		this->price = 200;
-		this->speed = 100;
-		this->volume = 500;
-		this->distance = 0;
-	}
-	Train(std::tuple<int, int, double> tuple, int dist) {
-		this->price = std::get<0>(tuple);
-		this->speed = std::get<1>(tuple);
-		this->volume = std::get<2>(tuple);
-		this->distance = dist;
-	}
-};
-
-class Plane :public Transport {
-public:
-	Plane() {
-		this->price = 500;
-		this->speed = 300;
-		this->volume = 100;
-		this->distance = 0;
-	}
-	Plane(std::tuple<int, int, double> tuple, int dist) {
-		this->price = std::get<0>(tuple);
-		this->speed = std::get<1>(tuple);
-		this->volume = std::get<2>(tuple);
-		this->distance = dist;
-	}
-};
-
-class Car : public Transport {
-public:
-	Car() {
-		this->price = 100;
-		this->speed = 60;
-		this->volume = 50;
-		this->distance = 0;
-	}
-	Car(std::tuple<int, int, double> tuple, int dist) {
-		this->price = std::get<0>(tuple);
-		this->speed = std::get<1>(tuple);
-		this->volume = std::get<2>(tuple);
-		this->distance = dist;
-	}
-};
-
 class Track {
 	double cost;
 	double time;
